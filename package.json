@@ -1,9 +1,29 @@
 {
   "name": "ip2region-wr",
-  "module": "index.ts",
+  "version": "0.1.0",
+  "description": "IP to region lookup wrapper based on ip2region.js",
   "type": "module",
+  "main": "./dist/ip-location.js",
+  "module": "./dist/ip-location.js",
+  "types": "./dist/ip-location.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/ip-location.d.ts",
+      "import": "./dist/ip-location.js"
+    }
+  },
+  "files": [
+    "dist",
+    "data"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "typescript": "^5.4.0"
   },
   "peerDependencies": {
     "typescript": "^5"

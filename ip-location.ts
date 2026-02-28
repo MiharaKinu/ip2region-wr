@@ -1,9 +1,13 @@
 import path from 'path';
 import fs from 'fs';
+import { fileURLToPath } from 'url';
 import { IPv4, IPv6, newWithBuffer } from 'ip2region.js';
 
-const DB_PATH_V4 = path.join(process.cwd(), 'data', 'ip2region_v4.xdb');
-const DB_PATH_V6 = path.join(process.cwd(), 'data', 'ip2region_v6.xdb');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const DB_PATH_V4 = path.join(__dirname, '..', 'data', 'ip2region_v4.xdb');
+const DB_PATH_V6 = path.join(__dirname, '..', 'data', 'ip2region_v6.xdb');
 
 interface IpInfo {
     raw: string;

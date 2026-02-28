@@ -1,4 +1,4 @@
-import { getIpLocation } from './ip-location';
+import { getIpLocation } from './ip-location.js';
 
 async function runTest() {
     const testIps = [
